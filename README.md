@@ -48,10 +48,12 @@ Details regarding the setup of the workshop VM can be found here:
 
 * [VMSETUP](https://github.com/dmaier-couchbase/cb-workshop-dev/blob/master/VMSETUP.md)
 
-## Downloads
+## Slides
 
 
-* [DCDEVW/Downloads](https://www.dropbox.com/sh/8umsxntxn5ou5xa/AADR_1YmKzrdeKDBZDzDeFxGa?dl=0)
+* In the folder slides.
+  * DAY1: DCCPW-Day1.pdf
+  * DAY2: DCCPW-Day2.pdf
 
 
 ## Agenda
