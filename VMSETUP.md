@@ -422,4 +422,4 @@ poweroff
 
 The VM image is available here:
 
-* https://www.dropbox.com/sh/8umsxntxn5ou5xa/AADR_1YmKzrdeKDBZDzDeFxGa?dl=0
+* https://www.dropbox.com/s/1t43x0eav7rgxve/Couchbase-Dev.tar.gz?dl=0
