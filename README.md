@@ -46,7 +46,7 @@ The attendee should have all required permissions to create Virtual Machines and
 
 Details regarding the setup of the workshop VM can be found here: 
 
-* [VMSETUP](https://github.com/dmaier-couchbase/cb-workshop-dev/blob/master/VMSETUP.md)
+* [VMSETUP](https://github.com/dufrenoyl/cb-workshop-dev/blob/master/VMSETUP.md)
 
 ## Slides
 
