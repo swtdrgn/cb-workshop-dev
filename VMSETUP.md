@@ -420,6 +420,6 @@ poweroff
 
 * If necessary repeat the steps in 'Configure the VM network'
 
-The VM image is available here:
+The VM image is available here (root / couchbase):
 
 * https://www.dropbox.com/s/1t43x0eav7rgxve/Couchbase-Dev.tar.gz?dl=0
