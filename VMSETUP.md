@@ -420,6 +420,6 @@ poweroff
 
 * If necessary repeat the steps in 'Configure the VM network'
 
-The VM image is available here:
+The VM image is available here (root / couchbase):
 
 * https://www.dropbox.com/sh/8umsxntxn5ou5xa/AADR_1YmKzrdeKDBZDzDeFxGa?dl=0
