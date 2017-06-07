@@ -217,12 +217,12 @@ yum install wget
 cd --
 mkdir Downloads
 cd Downloads
-wget https://packages.couchbase.com/releases/4.6.1/couchbase-server-enterprise-4.6.1-centos7.x86_64.rpm
+wget https://packages.couchbase.com/releases/4.6.2/couchbase-server-enterprise-4.6.2-centos7.x86_64.rpm
 ```
 
 * Install Couchbase Server
 ```
-rpm -ivh couchbase-server-enterprise-4.6.1-centos7.x86_64.rpm
+rpm -ivh couchbase-server-enterprise-4.6.2-centos7.x86_64.rpm
 ```
 
 * Check the service status
