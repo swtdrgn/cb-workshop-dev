@@ -65,13 +65,14 @@ Details regarding the setup of the workshop VM can be found here:
 | 09:00           | Introduction and Core Use Cases         |
 |                 | Couchbase Server Architecture           |
 |                 | Couchbase Server as a Distributed System|
+|                 | Exercices 1 & 2                         |
 | 10:30           | Coffee Break                            |
-|                 | Working with Buckets                    |
-|                 | Working with the Cluster                |
+|                 | Working with Buckets - Exercice 3       |
+|                 | Working with the Cluster - Exercice 4   |
 | 12:30           | Lunch                                   |
 |                 | Security Features                       |
-|                 | Cross Data Center Replication explained |
-|                 | Backup & Restore                        |
+|                 | Backup & Restore - Exercice 5           |
+|                 | XDCR explained - Excercice 6            |
 | 17:00           | Q&A and Summary                         |
 
 * Day 2
