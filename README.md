@@ -1,4 +1,4 @@
-### TOC
+### TABLE OF CONTENTS
 
    * [Couchbase Development Workshop](#couchbase-development-workshop)
       * [Requirements](#requirements)
@@ -53,7 +53,8 @@ Details regarding the setup of the workshop VM can be found here:
 
 * In the folder slides.
   * DAY1: [DCCPW-Day1.pdf](https://github.com/dufrenoyl/cb-workshop-dev/blob/master/slides/DCCPW-Day1.pdf)
-  * DAY2: [DCCPW-Day2.pdf](https://github.com/dufrenoyl/cb-workshop-dev/blob/master/slides/DCCPW-Day2.pdf)
+  * DAY2 C++ : [DCCPW-Day2.pdf](https://github.com/dufrenoyl/cb-workshop-dev/blob/master/slides/DCCPW-Day2.pdf)
+  * DAY2 Java: [DCJW-Day2.pdf](https://github.com/dufrenoyl/cb-workshop-dev/blob/master/slides/DCJW-Day2.pdf)
 
 
 ## Agenda
