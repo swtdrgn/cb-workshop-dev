@@ -19,28 +19,6 @@
 
 This document describes how to set up the workshop VM.
 
-## Requirements
-
-Each training computer should have at least the following HW configuration
-
-* 4 CPU cores >=2GHz
-* 8 GB RAM
-* 50 GB free disk space
-
-The following connectivity is expected:
-
-* Internet access
-* Access to Dropbox (alternatively the training material and environment can be provided on a network share in the LAN)
-
-The following software needs to be installed on the attendee's computer:
-
-* VirtualBox >= 4.3
-* Putty and WinSCP (Windows only)
-* A VNC Viewer (https://github.com/TigerVNC/tigervnc/releases)
-
-The attendee should have all required permissions to create Virtual Machines and Virtual Machine networks on his box.
-
-
 ## Virtual Machine Setup
 
 > Instead of setting up 4-5 VM-s, we will set up exactly 1 VM which will include all required components.
@@ -48,7 +26,7 @@ The attendee should have all required permissions to create Virtual Machines and
 
 Perform the following steps in order to create the Virtual Machine:
 
-* Create 64 Bit Linux VM in VirtualBox and call it 'Couchbase-Dev'
+* Create 64 Bit Linux VM (RedHat) in VirtualBox and call it 'Couchbase-Dev'
 * Assign 4GB RAM to it
 * Assign a 25GB disk to it
 * Change the CPU configuration to use 4 cores of your host machine
@@ -61,7 +39,8 @@ Perform the following steps in order to create the Virtual Machine:
 
 ### Configure the VM network
 
-The following commands need to be executed as user 'root'
+The following commands need to be executed as user 'root'.
+VirtualBox allows to configure various virtual network cards. (more information: https://www.virtualbox.org/manual/ch06.html)
 
 #### NAT
 
@@ -72,7 +51,7 @@ In order to enable access from the outside world via NAT, port forwarding can be
 | Name          | Host port        | Gest port |
 | ------------- |------------------|---------- |
 | SSH           |9122              | 22        |
-| CB            |9191              | 8091      |
+| CB (REST)     |9191              | 8091      |
 | VNC           |9159              | 5901      |
 
 Boot the VM and disable the firewall:
@@ -93,7 +72,7 @@ Host-only networking creates a network that is completely contained within the h
 
 #### Network settings
 
-Your VM should now have two network cards. You can double check and change the settings by using the following tool:
+Your VM should now have two network cards. You can double check and change the settings by using the following visual tool:
 
 ```
 nmtui
@@ -117,7 +96,7 @@ ping google.com
 
 ### Docker
 
-> Instead of dealing with multiple VM-s, we will use Docker containers within the VM in order to do the clustering exercises
+> Instead of dealing with multiple VM-s, we will use Docker containers within the VM in order to do the clustering exercises.
 
 The following steps can be performed to run a Couchbase instance via Docker:
 
@@ -134,17 +113,20 @@ docker run -d --name couchbase-1 -p 8091-8094:8091-8094 -p 11210-11211:11210-112
 docker run -d --name couchbase-2 couchbase
 docker run -d --name couchbase-3 couchbase
 ```
+> Be careful if you have already running containers or available containers. Also Couchbase Server could be running on the machine and docker won't be able to bind again the same ports. (Stop or remove docker containers and stop couchbase-server on the host to start from a clean state)
 
-This downloads and runs the latest Couchbase container. The first container will be accessible from the outside world.
+This downloads and runs the latest Couchbase container. 
+The first container will be accessible from the outside world thanks to port forwarding. 
 
 * Retrieve the container's internal IP addresses and note them down:
 ```
 inspect couchbase-$i | grep IPAddress
 ```
 
-Access the Couchbase UI via the Host-Only IP
+Access the Couchbase UI via the Host-Only IP. (This is with Host-only virtual cards)
 ```
-http://192.168.56.101:8091/
+http://192.168.56.101:8091/ (Virtual Host-Only cards)
+http://localhost:9191/ (NAT with Port Forwarding)
 ```
 
 Remember, the first node exposes port 8091 and so it's possible to access it via the docker host's name on this port.
@@ -312,7 +294,7 @@ vncserver :1 -geometry 1280x1024
 yum install maven
 ```
 
-* Download the JDK installation package from Oracle's web site (jdk-8u121-linux-x64.tar.gz from http://www.oracle.com/technetwork/java/javase/downloads/) and place it under '/root/Downloads'
+* Download the latest JDK installation package from Oracle's web site (jdk-8u121-linux-x64.tar.gz from http://www.oracle.com/technetwork/java/javase/downloads/) and place it under '/root/Downloads'
 
 * Install the JDK
 ```
@@ -344,7 +326,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.121-b13, mixed mode)
 chmod +x netbeans-8.2-linux.sh 
 ```
 
-* Log-in to the graphical user interface and install Netbeans under /opt/netbeans
+* Log-in to the graphical user interface (VNC) and install Netbeans under /opt/netbeans
 ```
 ./netbeans-8.2-linux.sh 
 ```
@@ -391,7 +373,7 @@ yum install qt5-* --skip-broken
 yum install qt-creator
 ```
 
-* Log-in to the graphical user interface and run Qt-Creator
+* Log-in to the graphical user interface (VNC) and run Qt-Creator
 ```
 qtcreator
 ```
